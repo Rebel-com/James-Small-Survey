@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Rules: The James Small Story - Reader Survey</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        select, input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            height: 15px;
+            background: #ddd;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .2s;
+        }
+        input[type="range"]:hover {
+            opacity: 1;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #3498db;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #3498db;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: -15px;
+            color: #666;
+            font-size: 12px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 100px;
+        }
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            display: none;
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #result h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        #answers {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>No Rules: The James Small Story - Reader Survey</h1>
+    <form id="surveyForm">
+        <label for="favorite_section">1. Which section of the book did you find most compelling?</label>
+        <select id="favorite_section" name="favorite_section" required>
+            <option value="">Please select</option>
+            <option value="the_son">The Son</option>
+            <option value="the_brother">The Brother</option>
+            <option value="the_father">The Father</option>
+            <option value="the_man">The Man</option>
+            <option value="the_player">The Player</option>
+            <option value="the_coach">The Coach</option>
+            <option value="the_hero">The Hero</option>
+            <option value="the_legend">The Legend</option>
+            <option value="the_last_word">The Last Word</option>
+        </select>
+
+        <label for="perspective">2. How well do you think the book balances different perspectives on James Small's life? (1-10)</label>
+        <input type="range" id="perspective" name="perspective" min="1" max="10" value="5" required>
+        <div class="range-labels">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        </div>
+
+        <label for="photos">3. How would you rate the quality and selection of photos in the book? (1-10)</label>
+        <input type="range" id="photos" name="photos" min="1" max="10" value="5" required>
+        <div class="range-labels">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        </div>
+
+        <label for="insight">4. How much new insight did you gain into James Small's life and career? (1-10)</label>
+        <input type="range" id="insight" name="insight" min="1" max="10" value="5" required>
+        <div class="range-labels">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        </div>
+
+        <label for="portrayal">5. How well do you think the book captures James Small as both a player and a person? (1-10)</label>
+        <input type="range" id="portrayal" name="portrayal" min="1" max="10" value="5" required>
+        <div class="range-labels">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        </div>
+
+        <label for="emotional_impact">6. Which aspect of James Small's story had the most emotional impact on you?</label>
+        <select id="emotional_impact" name="emotional_impact" required>
+            <option value="">Please select</option>
+            <option value="family_relationships">His family relationships</option>
+            <option value="rugby_career">His rugby career</option>
+            <option value="personal_struggles">His personal struggles</option>
+            <option value="coaching_career">His coaching career</option>
+            <option value="legacy">His lasting legacy</option>
+        </select>
+
+        <label for="writing_quality">7. How would you rate the quality of writing by Gavin Rich and Simon Borchardt? (1-10)</label>
+        <input type="range" id="writing_quality" name="writing_quality" min="1" max="10" value="5" required>
+        <div class="range-labels">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        </div>
+
+        <label for="book_format">8. How satisfied are you with the hardcover coffee-table book format? (1-10)</label>
+        <input type="range" id="book_format" name="book_format" min="1" max="10" value="5" required>
+        <div class="range-labels">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        </div>
+
+        <label for="overall_rating">9. Overall, how would you rate "No Rules: The James Small Story"? (1-10)</label>
+        <input type="range" id="overall_rating" name="overall_rating" min="1" max="10" value="5" required>
+        <div class="range-labels">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        </div>
+
+        <label for="recommendation">10. How likely are you to recommend this book to other rugby fans or those interested in South African sports history? (1-10)</label>
+        <input type="range" id="recommendation" name="recommendation" min="1" max="10" value="5" required>
+        <div class="range-labels">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        </div>
+
+        <label for="comments">11. Do you have any additional comments or feedback about the book?</label>
+        <textarea id="comments" name="comments"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result">
+        <h2>Thank you for your feedback!</h2>
+        <p>Your responses:</p>
+        <pre id="answers"></pre>
+        <p>Please copy the above text and send it back via WhatsApp.</p>
+    </div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var answers = {};
+            var inputs = document.getElementsByTagName('input');
+            var selects = document.getElementsByTagName('select');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type === 'range') {
+                    answers[inputs[i].name] = inputs[i].value;
+                }
+            }
+            for (var i = 0; i < selects.length; i++) {
+                answers[selects[i].name] = selects[i].value;
+            }
+            answers['comments'] = document.getElementById('comments').value;
+            document.getElementById('answers').textContent = JSON.stringify(answers, null, 2);
+            document.getElementById('surveyForm').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
